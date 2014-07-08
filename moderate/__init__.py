@@ -1,5 +1,5 @@
 ########################################
 
-#       The distrubted system          #
+#     The distributed Task system      #
 
 ########################################

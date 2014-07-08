@@ -11,7 +11,7 @@ setup(
     description = "A Python Distrubted System",
     author = 'Thomas Huang',
     url = 'https://github.com/thomashuang/Moderate',
-    packages = ['moderate'],
+    packages = ['moderate', 'moderate.queue'],
 
     install_requires = ['setuptools',
                         ],
