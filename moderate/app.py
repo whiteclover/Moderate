@@ -19,10 +19,8 @@ class App(object):
         print self.jobs[name]
 
     def __call__(self, name, args, kw=None):
-        print 'name:', name
         job = self.jobs.get(name)
         try:
-            
             if not job:
                 logger.warnning('Unknow job: Job<name: %s, args: %s, kw: %s>', name, args, kw)
                 return
