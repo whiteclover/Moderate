@@ -5,8 +5,8 @@ logger = logging.getLogger(__name__)
 class App(object):
 
     def __init__(self):
-        self.jobs = dict()
-        self.boostrap()
+        self.jobs = {}
+        self.bootstrap()
 
     def set_server(self, server):
         self.server = server
@@ -16,14 +16,20 @@ class App(object):
 
     def add_job(self, name, callback):
         self.jobs[name] = callback
+        print self.jobs[name]
 
-    def __call__(self, name, args, kw):
+    def __call__(self, name, args, kw=None):
+        print 'name:', name
+        job = self.jobs.get(name)
         try:
-            job = self.jobs.get(name)
+            
             if not job:
                 logger.warnning('Unknow job: Job<name: %s, args: %s, kw: %s>', name, args, kw)
                 return
-            job(*arg, **kw)
+            if kw:
+                job(*args, **kw)
+            else:
+                job(*args)
         except APPError as e:
             if isinstance(e, ReQueue):
                 self.server.queue.put(name, *args, **kw)

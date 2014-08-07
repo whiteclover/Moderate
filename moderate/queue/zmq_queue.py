@@ -22,7 +22,6 @@ class ZmqQueue(BaseQueue):
         self.push_socket = context.socket(zmq.PUSH)
         url = self.proto + '://*:' + str(self.port) 
         self.push_socket.bind(url)
-        #self.push_socket.setsockopt(zmq.LINGER, -1)
 
     def init_pull_socket(self):
 
