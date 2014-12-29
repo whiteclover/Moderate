@@ -3,6 +3,12 @@ Moderate
 
 A Python Distributed Task System 
 
+Feature
+----------
+
+1. Multi-threaded task execution (Leader/Follower variant)
+2. Take advantage of zmq push/pull pattern 
+
 How to Use
 -------------
 
