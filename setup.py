@@ -19,7 +19,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Topic :: Internet :: Proxy Servers',
+        'Topic :: Internet :: Distrubted System',
         ],
     long_description=long_description,
 )
